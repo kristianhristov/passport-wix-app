@@ -117,8 +117,8 @@ class WixAppStrategy extends passport.Strategy {
 
 		// Extensions:
 		_splitVar = instanceObj.ipAndPort?.split('/')
-		const ip = _splitVar[0] || null;
-		const port = parseInt(_splitVar[1]) || null;
+		const ip = _splitVar?.length ? _splitVar[0] : null;
+		const port = _splitVar?.length ? parseInt(_splitVar[1]) : null;
 		const signDate = new Date(instanceObj.signDate)
 
 		instanceObj.ext = {
