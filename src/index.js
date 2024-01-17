@@ -43,6 +43,10 @@ class WixAppStrategy extends passport.Strategy {
 	constructor(options, verify) {
 		super()
 
+		if (!options) {
+			return;
+		}
+		
 		if (typeof options === 'function') {
 			verify = options
 			options = {}
